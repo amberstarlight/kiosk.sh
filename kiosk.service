@@ -1,0 +1,18 @@
+[Unit]
+Description=Kiosk Mode Service
+Wants=graphical-session.target
+After=graphical-session.target
+After=multi-user.target
+
+[Service]
+Environment=DISPLAY=:0.0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+Type=simple
+ExecStart=/bin/bash /home/pi/kiosk.sh
+Restart=on-abort
+User=pi
+Group=pi
+
+[Install]
+WantedBy=graphical.target
+WantedBy=multi-user.target

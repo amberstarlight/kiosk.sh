@@ -1,0 +1,5 @@
+# Kiosk Mode Cron Jobs
+# Turn monitor on
+0 8  * * 1-5 /usr/bin/vcgencmd display_power 1
+# Turn monitor off
+0 17 * * 1-5 /usr/bin/vcgencmd display_power 0
